@@ -15,7 +15,7 @@ alias grb='git rebase'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 function gco {
   if [ -z "$1" ]; then
-    git checkout mast
+    git checkout master
   else
     git checkout $1
   fi
