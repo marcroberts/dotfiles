@@ -7,11 +7,13 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
  
 IRB.conf[:PROMPT_MODE] = :SIMPLE
  
-%w[rubygems wirble].each do |gem|
-  begin
-    require gem
-  rescue LoadError
-  end
+require 'rubygems'
+
+begin
+  require 'wirble' # sudo gem install wirble
+  Wirble.init
+  Wirble.colorize
+rescue LoadError
 end
 
 def copy(str)
